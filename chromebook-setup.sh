@@ -17,3 +17,4 @@ sudo cp /etc/libvirt/qemu.conf /qemu.conf.backup
 sudo sed -i 's/#user/user/g' /etc/libvirt/qemu.conf
 sudo sed -i 's/#group/group/g' /etc/libvirt/qemu.conf
 
+#End
