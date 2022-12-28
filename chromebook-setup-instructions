@@ -1,0 +1,46 @@
+- Asus C436FA, 16GB, 512G SSD
+
+- Initial Setup
+	- On boot, at sign in screen select "Use as a personal device" in lower left
+		- click enterprise enrollment
+	- log into tech dna account, auth with yubikey
+	- Check box "review sync options following setup"
+	- Skip "connect to your phone"
+	- Turn off all sync
+		- Click Manage What you sync
+		- Click customize sync
+		- Turn off all syncing
+		- Go back a screen
+	- Unselect "Make searches and browsinb better"
+	- checked chrome;//policy, downloaded policies as set
+	- Update Chrome:
+		- Check for update in setting->Abour ChromeOS
+		- Restart to upgrade
+		- Continue until on latest version
+	- turn Bluetooth off
+	- disable guest browsing (set to ON by ent policy, change)
+	- disable show usernames and photos on sign in screen (set to ON by ent policy, consider change)
+	- restrict sign-in to following users: jan.drake@tech-dna.net (set to OFF by ent policy, change)
+	- ATTEMPTED TO ENABLE DnsOerHttpsMode, disabled due to central policy.  ENABLE IN CENTRAL POLICY
+	- Ensure all google web and ad tracking is off (appeared to be off per policy)
+
+- Enable Linux
+	- In developer settings choose custom linux particiation size (recommend at least 200GB)
+	- Enable linux (this will take a bit)
+	- Open up Files app
+	- Right click Downloads folder
+	- Select share with Linux
+
+
+- Download setup scripts
+	- In Linux Terminal
+	- git clone https://github.com/techdna/chromebook-setup.git
+
+- Run setup script
+	- In Linux Terminal
+	- Switch to chromebook-setup
+	- ./chromebook-setup.sh
+
+NOTES:
+- Mass enrollment: https://support.google.com/chrome/a/answer/9412749?hl=en#zippy=%2Cprogram-your-rubber-ducky
+
