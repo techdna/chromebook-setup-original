@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Update all
+sudo apt update
+
 # Install VM capability (does not support windows, use Parallels)
 sudo apt install \
 	qemu-kvm \
@@ -19,5 +22,8 @@ xhost +
 
 # Start gnome-boxes in background
 ghome-boxes &
+
+# Install Docker
+sudo apt install docker docker-compose -y
 
 #End
