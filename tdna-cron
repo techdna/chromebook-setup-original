@@ -1,1 +1,1 @@
-@reboot sudo apt update -y
+@reboot root apt update -y

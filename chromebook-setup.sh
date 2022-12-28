@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update all
-sudo apt update
+sudo apt update -y
 
 # Install VM capability (does not support windows, use Parallels)
 sudo apt install \
@@ -25,5 +25,9 @@ ghome-boxes &
 
 # Install Docker
 sudo apt install docker docker-compose -y
+
+# Install Cron
+sudo apt install cron -y
+sudo cp ./tdna-cron /etc/cron.d
 
 #End
