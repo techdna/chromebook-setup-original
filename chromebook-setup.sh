@@ -30,4 +30,11 @@ sudo apt install docker docker-compose -y
 sudo apt install cron -y
 sudo cp ./tdna-cron /etc/cron.d
 
+# Install Zoom
+sudo apt install zoom -y
+
+# Install Slack
+sudo apt install ./slack*amd64.deb
+
+
 #End
