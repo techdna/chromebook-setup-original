@@ -2,7 +2,7 @@
 sudo dnf -y install fedora-workstation-repositories
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install dnf-automatic
+sudo dnf -y install dnf-automatic
 sudo sed -i 's/apply_updates = no/apply_updates = yes/g' /etc/dnf/automatic.conf
 sudo dnf -y update
 sudo systemctl enable --now dnf-automatic.timer
@@ -21,7 +21,7 @@ sudo dnf -y install chromium
 #
 
 #chromium
-sudo dnf -y install chromnium
+sudo dnf -y install chromium
 sudo sed -i 's/chromium-browser /chromium-browser --disable-features=PreloadMediaEngagementData, MediaEngagementBypassAutoplayPolicies /g' /usr/share/applications/chromium-browser.desktop
 
 #docker
