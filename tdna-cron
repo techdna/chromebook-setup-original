@@ -1,1 +1,4 @@
 @reboot root apt update -y
+@reboot root apt upgrade -y
+@reboot root cd / && git pull https://github.com/techdna/chromebook-setup.git
+
