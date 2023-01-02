@@ -39,4 +39,9 @@ sudo wget https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slac
 sudo apt install ./slack*.deb -y
 sudo rm ./*.deb
 
+# Install 1Password
+sudo wget https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
+sudo apt install ./1password*.deb -y
+sudo rm ./*.deb
+
 #End
