@@ -2,6 +2,7 @@
 
 # Update all
 sudo apt update -y
+sudo apt upgrade -y
 
 # Install VM capability (does not support windows, use Parallels)
 sudo apt install \
