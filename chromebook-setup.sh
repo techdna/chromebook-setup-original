@@ -37,6 +37,6 @@ sudo apt install zoom -y
 # Install Slack
 sudo wget https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb
 sudo apt install ./slack*.deb -y
-sudo rm https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb
+sudo rm ./*.deb
 
 #End
