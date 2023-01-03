@@ -4,6 +4,9 @@
 sudo apt update -y
 sudo apt upgrade -y
 
+# Miscellaneous
+sudo apt install dnsutils -y
+
 # Install VM capability (does not support windows, use Parallels)
 sudo apt install \
 	qemu-kvm \
@@ -23,6 +26,8 @@ xhost +
 
 # Start gnome-boxes in background
 ghome-boxes &
+
+# Download and create base VM Image (Fedora)
 
 # Install Docker
 sudo apt install docker docker-compose -y
