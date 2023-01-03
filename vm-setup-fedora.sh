@@ -35,3 +35,6 @@ op --version
 
 #Desktop Config
 gsettings set org.gnome.desktop.background picture-options "scaled"
+
+# Remove unnecessary components
+sudo dnf autoremove
