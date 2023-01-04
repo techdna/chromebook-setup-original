@@ -1,30 +1,36 @@
 # configure repos
-sudo apt -y install fedora-workstation-repositories
-sudo apt -y install apt-plugins-core
 sudo apt config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo apt -y install apt-automatic
-sudo sed -i 's/apply_updates = no/apply_updates = yes/g' /etc/apt/automatic.conf
+sudo apt install unattended-upgrades apt-listchanges bsd-mailx -y
+sudo dpkg-reconfigure -plow unattended-upgrades -y
 sudo apt -y update
-sudo systemctl enable --now apt-automatic.timer
-
 sudo apt full-upgrade -y
 
 # usual dependencies
-sudo apt -y install @development-tools
-sudo apt -y install kernel-headers kernel-devel dkms zlib-devel
+sudo apt -y install build-essential 
+sudo apt install linux-headers-$(uname -r) dkms zlib1g
 sudo apt -y install elfutils-libelf-devel
 
 #
 #Application Configuration
 #
 
-# google chromium and chrome
-sudo apt -y config-manager --set-enabled google-chrome
+# google chromium 
 sudo apt -y install chromium-browser
 
 
 #docker
-sudo apt -y install docker-ce docker-ce-cli containerd.io docker-compose
+sudo apt-get -y install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update -y
+sudo apt -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # 1Password Command Line
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
