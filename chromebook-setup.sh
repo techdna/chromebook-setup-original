@@ -6,6 +6,7 @@ sudo apt upgrade -y
 
 # Miscellaneous
 sudo apt install dnsutils -y
+sudo apt install ack -y
 
 # Install VM capability (does not support windows, use Parallels)
 sudo apt install \
@@ -30,7 +31,8 @@ ghome-boxes &
 # Download and create base VM Image (Fedora)
 
 # Install Docker
-sudo apt install docker docker-compose -y
+sudo apt install containerd.io docker-ce docker-ce-client docker-compose -y
+sudo systemctl start docker
 
 # Install Cron
 sudo apt install cron -y

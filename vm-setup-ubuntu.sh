@@ -1,5 +1,4 @@
 # configure repos
-sudo apt -y config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 DEBIAN_FRONTEND=noninteractive sudo apt install unattended-upgrades apt-listchanges bsd-mailx -y
 sudo dpkg-reconfigure -plow unattended-upgrades -y
 sudo apt -y update
