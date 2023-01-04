@@ -1,5 +1,5 @@
 # configure repos
-sudo apt config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo apt -y config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 DEBIAN_FRONTEND=noninteractive sudo apt install unattended-upgrades apt-listchanges bsd-mailx -y
 sudo dpkg-reconfigure -plow unattended-upgrades -y
 sudo apt -y update
@@ -25,7 +25,7 @@ sudo apt-get -y install \
     gnupg \
     lsb-release
 sudo mkdir -p /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --yes --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
