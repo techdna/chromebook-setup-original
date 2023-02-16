@@ -46,6 +46,14 @@ sudo wget https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slac
 sudo apt install ./slack*.deb -y
 sudo rm ./*.deb
 
+# Install GCloud
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz`
+tar xf google-cloud-cli-418.0.0-linux-x86_64.tar.gz
+cd google-cloud-sdk
+./install.sh --usage-reporting false
+gcloud init
+ 
+
 # Install 1Password
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
