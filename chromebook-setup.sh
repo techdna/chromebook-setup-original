@@ -47,7 +47,7 @@ sudo apt install ./slack*.deb -y
 sudo rm ./*.deb
 
 # Install GCloud
-curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz`
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz
 tar xf google-cloud-cli-418.0.0-linux-x86_64.tar.gz
 cd google-cloud-sdk
 ./install.sh --usage-reporting false
