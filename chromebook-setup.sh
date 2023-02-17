@@ -7,7 +7,6 @@ TDNAID=$(sed 's/[@].*$//' <<< $TDNAID)
 echo ""
 echo "Welcome $TDNAID"
 echo ""
-echo "In order to configure 1Password command line clie
 echo "***"
 echo "*** Setting up: $TDNAID"
 echo "***"
@@ -49,10 +48,9 @@ sudo apt update -y  && sudo apt install 1password-cli  -y
 op --version
 clear 
 echo "In order to configure the 1Password client"
-read -e -p "Please enter your 1Password secret: " 1PWSECRET
-echo ""
+read -e -p "Please enter your 1Password secret (with dashes): " PWSECRET
 
-1PWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@agilebits.com --secret-key $1PWSECRET) 
+1PWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@agilebits.com --secret-key $PWSECRET) 
 echo $1PWTOKEN
 
 # Start gnome-boxes in background
