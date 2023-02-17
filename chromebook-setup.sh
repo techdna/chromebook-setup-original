@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # get identity
+clear
 read -e -p "Please enter your Tech DNA email:" TDNAID
-echo $TDNAID
+TDNAID=$(sed 's/[@].*$//' <<< $TDNAID)
+echo "***"
+echo "*** Setting up: $TDNAID"
+
 # Update all
 sudo apt update -y
 sudo apt upgrade -y
