@@ -4,8 +4,13 @@
 clear
 read -e -p "Please enter your Tech DNA email:" TDNAID
 TDNAID=$(sed 's/[@].*$//' <<< $TDNAID)
+echo ""
+echo "Welcome $TDNAID"
+echo ""
+echo "In order to configure 1Password command line clie
 echo "***"
 echo "*** Setting up: $TDNAID"
+echo "***"
 
 # Update all
 sudo apt update -y
@@ -42,7 +47,13 @@ sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --yes --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 sudo apt update -y  && sudo apt install 1password-cli  -y
 op --version
-op account add --address techdna.1password.com --email wendy.appleseed@agilebits.com --secret-key A3-...
+clear 
+echo "In order to configure the 1Password client"
+read -e -p "Please enter your 1Password secret: " 1PWSECRET
+echo ""
+
+1PWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@agilebits.com --secret-key $1PWSECRET) 
+echo $1PWTOKEN
 
 # Start gnome-boxes in background
 ghome-boxes &
