@@ -50,7 +50,7 @@ clear
 echo "In order to configure the 1Password client"
 read -e -p "Please enter your 1Password secret (with dashes): " PWSECRET
 
-ONEPWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@agilebits.com --secret-key $PWSECRET) 
+ONEPWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@tech-dna.net --secret-key $PWSECRET) 
 echo $ONEPWTOKEN
 
 # Start gnome-boxes in background
@@ -80,7 +80,7 @@ tar xf google-cloud-cli-418.0.0-linux-x86_64.tar.gz
 cd google-cloud-sdk
 ./install.sh --usage-reporting false
 source ~/.bashrc
-gcloud auth login
+gcloud auth login --quiet
  
 
 
