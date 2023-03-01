@@ -50,11 +50,11 @@ clear
 echo "In order to configure the 1Password client"
 read -e -p "Please enter your 1Password secret (with dashes): " PWSECRET
 
-1PWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@agilebits.com --secret-key $PWSECRET) 
-echo $1PWTOKEN
+ONEPWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@agilebits.com --secret-key $PWSECRET) 
+echo $ONEPWTOKEN
 
 # Start gnome-boxes in background
-ghome-boxes &
+gnome-boxes &
 
 # Download and create base VM Image (Fedora)
 
