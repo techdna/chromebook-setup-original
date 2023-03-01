@@ -59,7 +59,7 @@ gnome-boxes &
 # Download and create base VM Image (Fedora)
 
 # Install Docker
-sudo apt install containerd.io docker-ce docker-ce-client docker-compose -y
+sudo apt install containerd.io docker docker-compose -y
 sudo systemctl start docker
 
 # Install Cron
