@@ -38,20 +38,20 @@ xhost +
 
 
 # Install 1Password
-curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+# curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
-sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
-curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
-sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
-curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --yes --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
-sudo apt update -y  && sudo apt install 1password-cli  -y
-op --version
-clear 
-echo "In order to configure the 1Password client"
-read -e -p "Please enter your 1Password secret (with dashes): " PWSECRET
+# sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+# curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+# sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+# curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --yes --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+# sudo apt update -y  && sudo apt install 1password-cli  -y
+# op --version
+# clear 
+# echo "In order to configure the 1Password client"
+# read -e -p "Please enter your 1Password secret (with dashes): " PWSECRET
 
-ONEPWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@tech-dna.net --secret-key $PWSECRET) 
-echo $ONEPWTOKEN
+# ONEPWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@tech-dna.net --secret-key $PWSECRET) 
+# echo $ONEPWTOKEN
 
 # Start gnome-boxes in background
 gnome-boxes &
@@ -70,18 +70,20 @@ sudo cp ./tdna-cron /etc/cron.d
 sudo apt install zoom -y
 
 # Install Slack
+# Check for download before downloading
 sudo wget https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb
 sudo apt install ./slack*.deb -y
 sudo rm ./*.deb
 
 # Install GCloud
-curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz
-tar xf google-cloud-cli-418.0.0-linux-x86_64.tar.gz
-cd google-cloud-sdk
+# check for download before downloading
+# curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz
+# tar xf google-cloud-cli-418.0.0-linux-x86_64.tar.gz
+# cd google-cloud-sdk
 ./install.sh --usage-reporting false
-source ~/.bashrc
-gcloud auth login --quiet
+# source ~/.bashrc
+# gcloud auth login --quiet
  
 
 
-#End
+# End
