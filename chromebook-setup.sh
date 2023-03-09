@@ -80,7 +80,7 @@ sudo rm ./*.deb
 # curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz
 # tar xf google-cloud-cli-418.0.0-linux-x86_64.tar.gz
 # cd google-cloud-sdk
-./install.sh --usage-reporting false
+# ./install.sh --usage-reporting false
 # source ~/.bashrc
 # gcloud auth login --quiet
  
