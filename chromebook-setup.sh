@@ -39,7 +39,7 @@ xhost +
 
 # Install 1Password
 # curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
+# echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
 # sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
 # curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
 # sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
@@ -53,8 +53,6 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gp
 # ONEPWTOKEN=eval $(op account add --address techdna.1password.com --email $TDNAID@tech-dna.net --secret-key $PWSECRET) 
 # echo $ONEPWTOKEN
 
-# Start gnome-boxes in background
-gnome-boxes &
 
 # Download and create base VM Image (Fedora)
 
@@ -84,6 +82,8 @@ sudo rm ./*.deb
 # source ~/.bashrc
 # gcloud auth login --quiet
  
+# Start gnome-boxes in background
+gnome-boxes &
 
 
 # End
