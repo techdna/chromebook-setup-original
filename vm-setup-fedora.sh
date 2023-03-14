@@ -16,6 +16,10 @@ sudo dnf -y install elfutils-libelf-devel
 sudo dnf -y config-manager --set-enabled google-chrome
 sudo dnf -y install chromium
 
+# google cloud cli installation
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz
+tar -xf google-cloud-cli-418.0.0-linux-x86_64.tar.gz
+
 #
 #Application Configuration
 #
@@ -35,6 +39,8 @@ op --version
 
 #Desktop Config
 gsettings set org.gnome.desktop.background picture-options "scaled"
+
+
 
 # Remove unnecessary components
 sudo dnf autoremove
