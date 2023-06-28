@@ -36,6 +36,12 @@ sudo sed -i 's/#user/user/g' /etc/libvirt/qemu.conf
 sudo sed -i 's/#group/group/g' /etc/libvirt/qemu.conf
 xhost +
 
+# Install TDNA Tools Dependencies
+pip3 install apache-libcloud slack-sdk
+
+# Install convenient tools
+sudo apt install p7zip-full
+sudo apt install subversion
 
 # Install 1Password
 # curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
