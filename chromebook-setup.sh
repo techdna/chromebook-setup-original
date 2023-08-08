@@ -79,6 +79,9 @@ sudo wget https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slac
 sudo apt install ./slack*.deb -y
 sudo rm ./*.deb
 
+# Install VLC Media
+sudo apt install vlc -y
+
 # Install GCloud
 # check for download before downloading
 # curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-418.0.0-linux-x86_64.tar.gz
